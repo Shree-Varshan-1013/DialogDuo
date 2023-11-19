@@ -1,8 +1,8 @@
 import React from 'react'
-import './Dash.css'
-import school from './assets/Frame1.png'
-import college from './assets/Frame2.png'
-import resume from './assets/Frame3.png'
+import '../styles/Dash.css'
+import school from '../assets/Frame1.png'
+import college from '../assets/Frame2.png'
+import resume from '../assets/Frame3.png'
 
 const Dash = () => {
   return (

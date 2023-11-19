@@ -1,6 +1,6 @@
 import React from 'react'
-import headerpic from './assets/headerpic.png'
-import './Home.css'
+import headerpic from '../assets/headerpic.png'
+import '../styles/Home.css'
 const Home = () => {
     return (
         <div class='home'>
