@@ -1,14 +1,31 @@
 import React from 'react'
-import headerpic from '/public/img/headerpic.png'
+import headerpic from '/img/headerpic.png'
 import axios from 'axios';
 import '../styles/Home.css'
 const Home = () => {
-
     const download = async () => {
-        const res = await axios.get('http://localhost:2018/api/resume/fetch-pdf');
-        const z = res.data;
-        console.log(z);
-    }
+        try {
+            const response = await fetch('http://localhost:2018/api/resume/fetch-pdf');
+            const blob = await response.blob();
+
+            // Create a temporary URL to the blob
+            const url = window.URL.createObjectURL(new Blob([blob]));
+            
+            // Create a link element
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'Resume.pdf'); // Set the filename for download
+            document.body.appendChild(link);
+
+            // Trigger the download
+            link.click();
+
+            // Clean up
+            link.parentNode.removeChild(link);
+        } catch (error) {
+            console.error('Error downloading PDF:', error);
+        }
+    };
 
     return (
         <div class='home'>
