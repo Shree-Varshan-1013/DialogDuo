@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const replicate = require('./config/openAiConfig');
+
 const PORT = process.env.PORT || 2018;
 
 const app = express();
