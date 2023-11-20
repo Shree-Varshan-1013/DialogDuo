@@ -1,2 +1,16 @@
-GET http://localhost:2018/
-```
+# POST http://localhost:2018/api/resume/create-pdf
+# Content-Type: application/json
+
+# {
+#     "name": "Samyukta",
+#     "email": "sam@gmail.com",
+#     "education": "UG",
+#     "experience": "Beginner",
+#     "skills": "AI/ML",
+#     "projects": "Done 2 projects on pytorch llama",
+#     "contact": 6369442790
+# }
+
+GET http://localhost:2018/api/resume/fetch-pdf
+
+# GET http://localhost:2018/api/resume/get/shree@gmail.com

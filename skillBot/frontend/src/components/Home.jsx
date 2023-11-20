@@ -1,7 +1,15 @@
 import React from 'react'
 import headerpic from '/public/img/headerpic.png'
+import axios from 'axios';
 import '../styles/Home.css'
 const Home = () => {
+
+    const download = async () => {
+        const res = await axios.get('http://localhost:2018/api/resume/fetch-pdf');
+        const z = res.data;
+        console.log(z);
+    }
+
     return (
         <div class='home'>
             <div className='header'>
@@ -16,7 +24,7 @@ const Home = () => {
             <div className="cto">
                 <p>EXPERIENCE OUR SKILLBOT SERVICES</p>
                 <div>
-                    <button className="login">Login</button>
+                    <button className="login" onClick={download}>Login</button>
                     <button className="signup">Sign Up</button>
                 </div>
             </div>

@@ -1,12 +1,14 @@
 const express = require('express');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 const dbConnect = require('./config/mongoDBConfig');
 const resumeController = require('./controller/resumeController');
 const PORT = process.env.PORT || 2018;
 
 const app = express();
 
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use(cors());
 
@@ -54,6 +56,23 @@ app.post('/api', async (req, res) => {
 });
 
 app.post('/api/resume', resumeController.resumeBuilder);
+app.get('/api/resume/get/:email', resumeController.getResume);
+
+// POST route for PDF generation....
+app.post("/api/resume/create-pdf", resumeController.generatePDF,(req, res) => {
+    pdf.create(pdfTemplate(req.body), options).toFile("Resume.pdf", (err) => {
+      if (err) {
+        console.log(err);
+        res.send(Promise.reject());
+      } else res.send(Promise.resolve());
+    });
+  });
+
+  // GET route -> send generated PDF to client...
+app.get("/api/resume/fetch-pdf", resumeController.getGeneratePDF, (req, res) => {
+    const file = `${__dirname}/Resume.pdf`;
+    res.download(file);
+  });
 
 app.listen(PORT, () => { `Server is running on port ${PORT}` })
 
