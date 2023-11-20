@@ -8,18 +8,18 @@ const resumeBuilder = async (req, res) => {
         const resume = new Resume({
             name,
             jobTitle,
+            contact,
             email,
-            linkedIn,
             description,
+            linkedIn,
             languages,
+            skills,
             school,
             schoolYear,
             college,
             collegeYear,
             experience,
-            skills,
             projects,
-            contact,
             location,
         });
         await resume.save();

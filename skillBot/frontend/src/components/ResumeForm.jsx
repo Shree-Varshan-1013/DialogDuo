@@ -1,28 +1,76 @@
-import React from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
+import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router-dom';
 import '../styles/ResumeForm.css';
 
 const ResumeForm = () => {
 
-    const download = async () => {
+    const navigate = useNavigate();
+
+    const initialState = {
+        name: "",
+        jobTitle: "",
+        contact: "",
+        email: "",
+        description: "",
+        linkedIn: "",
+        languages: "",
+        skills: "",
+        school: "",
+        schoolYear: "",
+        college: "",
+        collegeYear: "",
+        experience: "",
+        projects: "",
+        location: "",
+    };
+
+    const [details, setDetails] = useState(initialState);
+
+    const eventChange = (event) => {
+        const { name, value } = event.target;
+        setDetails((prevDetails) => {
+            return {
+                ...prevDetails,
+                [name]: value,
+            };
+        });
+    }
+
+    const download = async (event) => {
+        event.preventDefault();
         try {
-            const response = await axios.get('http://localhost:2018/api/resume/fetch-pdf');
-            const blob = await response.blob();
-
-            // Create a temporary URL to the blob
-            const url = window.URL.createObjectURL(new Blob([blob]));
-
-            // Create a link element
-            const link = document.createElement('a');
-            link.href = url;
-            link.setAttribute('download', 'Resume.pdf'); // Set the filename for download
-            document.body.appendChild(link);
-
-            // Trigger the download
-            link.click();
-
-            // Clean up
-            link.parentNode.removeChild(link);
+            
+            const pushData = await axios.post('http://localhost:2018/api/resume', details);
+            console.log(pushData.data)
+            const generatePdf = await axios.post('http://localhost:2018/api/resume/create-pdf', details);
+            console.log(generatePdf.data)
+            setTimeout(() => {
+                let timerInterval;
+                Swal.fire({
+                    title: "Generating Resume !",
+                    html: "Please wait for <b></b> milliseconds.",
+                    timer: 5000,
+                    timerProgressBar: true,
+                    didOpen: () => {
+                        Swal.showLoading();
+                        const timer = Swal.getPopup().querySelector("b");
+                        timerInterval = setInterval(() => {
+                            timer.textContent = `${Swal.getTimerLeft()}`;
+                        }, 100);
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval);
+                    }
+                }).then((result) => {
+                    /* Read more about handling dismissals below */
+                    if (result.dismiss === Swal.DismissReason.timer) {
+                        console.log("finished");
+                    }
+                });
+                navigate('/resume/download');
+            }, 5000)
         } catch (error) {
             console.error('Error downloading PDF:', error);
         }
@@ -38,54 +86,54 @@ const ResumeForm = () => {
                     <form action="">
                         <div className="columns">
                             <div className="column1">
-                                <input type="text" id="name" name="name" placeholder="Name" />
+                                <input type="text" id="name" name="name" placeholder="Name" value={details.name} onChange={eventChange} />
                                 <br />
                                 <br />
-                                <input type="text" name="phone" id="phone" placeholder='Phone number' />
+                                <input style={{ outline: "none", height: '50px', '-webkit-appearance': 'textfield' }} type="number" name="contact" id="contact" placeholder='Phone number' value={details.contact} onChange={eventChange} />
                                 <br />
                                 <br />
-                                <input type="text" name="description" id="description" placeholder='Description' />
+                                <input type="text" name="description" id="description" placeholder='Description' value={details.description} onChange={eventChange} />
                                 <br />
                                 <br />
-                                <input type="text" name="langsknown" id="langsknown" placeholder='Languages Known' />
+                                <input type="text" name="languages" id="languages" placeholder='Languages Known' value={details.languages} onChange={eventChange} />
                                 <br />
                                 <br />
-                                <input type="text" name="school" id="school" placeholder='School Name' />
+                                <input type="text" name="school" id="school" placeholder='School Name' value={details.school} onChange={eventChange} />
                                 <br />
                                 <br />
-                                <input type="text" name="college" id="college" placeholder='College Name' />
+                                <input type="text" name="college" id="college" placeholder='College Name' value={details.college} onChange={eventChange} />
                                 <br />
                                 <br />
-                                <input type="text" name="experience" id="experience" placeholder='Experience' />
+                                <input type="text" name="experience" id="experience" placeholder='Experience' value={details.experience} onChange={eventChange} />
                                 <br />
                                 <br />
-                                <input type="text" name="location" id="location" placeholder='Location' />
+                                <input type="text" name="location" id="location" placeholder='Location' value={details.location} onChange={eventChange} />
                                 <br />
                                 <br />
                             </div>
                             <div className="column2">
-                                <input type="text" id="jobTitle" name="jobTitle" placeholder="Job Title" />
+                                <input type="text" id="jobTitle" name="jobTitle" placeholder="Job Title" value={details.jobTitle} onChange={eventChange} />
                                 <br />
                                 <br />
-                                <input type="text" name="email" id="email" placeholder='Email' />
+                                <input type="text" name="email" id="email" placeholder='Email' value={details.email} onChange={eventChange} />
                                 <br />
                                 <br />
-                                <input type="text" name="linkedin" id="linkedin" placeholder='Linkedin' />
+                                <input type="text" name="linkedIn" id="linkedIn" placeholder='Linkedin' value={details.linkedIn} onChange={eventChange} />
                                 <br />
                                 <br />
-                                <input type="text" name="skillsknown" id="skillsknown" placeholder='Skills Known' />
+                                <input type="text" name="skills" id="skills" placeholder='Skills Known' value={details.skills} onChange={eventChange} />
                                 <br />
                                 <br />
-                                <input type="text" name="schoolYear" id="schoolYear" placeholder='School Years' />
+                                <input type="text" name="schoolYear" id="schoolYear" placeholder='School Years' value={details.schoolYear} onChange={eventChange} />
                                 <br />
                                 <br />
-                                <input type="text" name="collegeYear" id="collegeYear" placeholder='College Years' />
+                                <input type="text" name="collegeYear" id="collegeYear" placeholder='College Years' value={details.collegeYear} onChange={eventChange} />
                                 <br />
                                 <br />
-                                <input type="text" name="projects" id="projects" placeholder='Projects' />
+                                <input type="text" name="projects" id="projects" placeholder='Projects' value={details.projects} onChange={eventChange} />
                                 <br />
                                 <br />
-                                <button type='submit' className='button-5' onClick={download}>Submit</button>
+                                <button type='submit' className='button-5' onClick={download}>Generate Resume</button>
                             </div>
                         </div>
                     </form>
