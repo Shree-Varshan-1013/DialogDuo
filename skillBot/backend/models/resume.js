@@ -1,9 +1,14 @@
 const mongoose = require('mongoose');
+import { college } from '/public/img/Frame2.png';
 
 const resumeSchema = new mongoose.Schema({
     name: {
         type: String,
         required: "Name is required",
+    },
+    jobTitle: {
+        type: String,
+        required: "Job Title is required",
     },
     email: {
         type: String,
@@ -11,9 +16,33 @@ const resumeSchema = new mongoose.Schema({
         lowercase: true,
         unique: true,
     },
-    education: {
+    linkedIn: {
         type: String,
-        required: "Education is required",
+        required: "LinkedIn is required",
+    },
+    description: {
+        type: String,
+        required: "Description is required",
+    },
+    languages: {
+        type: String,
+        required: "Languages are required",
+    },
+    school:{
+        type: String,
+        required: "School is required",
+    },
+    schoolYear:{
+        type: String,
+        required: "School Year is required",
+    },
+    collegeYear:{
+        type: String,
+        required: "College Year is required",
+    },
+    college:{
+        type: String,
+        required: "College is required",
     },
     experience: {
         type: String,
@@ -31,11 +60,10 @@ const resumeSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
+    location: {
+        type: String,
+        required: true,
+    },
 });
-
-
-// resumeSchema.path('contact').validate(function validatePhone() {
-//     return (this.phoneNr > 999999999);
-// });
 
 module.exports = mongoose.model('Resume', resumeSchema);
