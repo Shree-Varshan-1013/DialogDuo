@@ -4,15 +4,23 @@ const path = require('path');
 const pdfTemplate = require("../models/resumeTemplate/index");
 const resumeBuilder = async (req, res) => {
     try {
-        const { name, email, education, experience, skills, projects, contact } = req.body;
+        const { name, jobTitle, email, linkedIn, description, languages, school, schoolYear, college, collegeYear, experience, skills, projects, contact, location } = req.body;
         const resume = new Resume({
             name,
+            jobTitle,
             email,
-            education,
+            linkedIn,
+            description,
+            languages,
+            school,
+            schoolYear,
+            college,
+            collegeYear,
             experience,
             skills,
             projects,
             contact,
+            location,
         });
         await resume.save();
         res.send(req.body);
