@@ -8,7 +8,7 @@
 }
 
 .box--left--inner {
-  margin: 70px;
+  margin: 50px;
 }
 
 .box--right {
@@ -21,13 +21,12 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 80vh;
 }
 
 body {
   background-color: #f7f9f9;
 }
-
 #special-text {
   display: inline-block; /* or block if you want it to behave like a block element */
   padding: 5px 10px; /* Add padding to provide space for content */
@@ -42,7 +41,7 @@ body {
   #special-header-text {
     background: radial-gradient(
       circle,
-    rgba(238, 174, 202, 1) 0%,
+    #eeaeca 0%,
     rgba(148, 187, 233, 1) 100%
     );
     -webkit-background-clip: text;
@@ -64,11 +63,11 @@ body {
 
 .chat-box {
   font-family: "Noto Sans", sans-serif;
-  background: rgb(238, 174, 202);
+  background: #eeaeca;
   background: radial-gradient(
     circle,
     rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
+    #94bbe9 100%
   );
   width: 600px;
   height: 400px;
@@ -140,7 +139,7 @@ input[type="text"] {
   margin-right: 10px;
 }
 .button-54 {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-size: 16px;
   letter-spacing: 2px;
   text-decoration: none;

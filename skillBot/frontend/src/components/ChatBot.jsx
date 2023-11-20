@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import axios from 'axios';
+import Swal from 'sweetalert2';
 import Typewriter from 'typewriter-effect';
 import '../styles/ChatBot.css';
 function ChatBot() {
@@ -26,11 +27,14 @@ function ChatBot() {
 
     const getResponse = async (event) => {
         event.preventDefault();
-        setTimer(false);
         if (userData === "") {
-            alert("Please enter a query");
+            Swal.fire({
+                title: "<h3>Please enter the query !</h3>",
+                icon: "info",
+            });
             return;
         }
+        setTimer(false);
         try {
             setUserMessages(prevMessages => [...prevMessages, userData]);
             const response = await axios.post('http://localhost:2018/api', {
@@ -58,7 +62,7 @@ function ChatBot() {
         <div className='box'>
             <div className='box--left'>
                 <div className='box--left--inner'>
-                    <h1>Shape Your <span id="special-text">Destiny</span>
+                    <h1 style={{ marginBottom: "20px" }}>Shape Your <span id="special-text">Destiny</span>
                         <br />with
                         Comprehensive <span id="special-header-text">Career Counseling</span></h1>
                     <p>

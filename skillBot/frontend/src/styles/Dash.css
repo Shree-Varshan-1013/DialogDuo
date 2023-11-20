@@ -1,7 +1,8 @@
 .dash {
   display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
+  /* flex-direction: column; */
+  margin-right: 50px;
+  margin-left: 50px;
   user-select: none;
 }
 .heading {
@@ -21,7 +22,7 @@
   display: flex;
   flex-direction: row;
   color: #202846;
-  margin: 10px;
+  margin: 20px;
   border-radius: 10px;
   border: 10px;
   border-color: #3ec0bb;
@@ -55,20 +56,65 @@
 label {
   font-family: "Heebo", sans-serif;
   font-size: 1rem;
-  font-weight: 500;
-  /* letter-spacing: 0.185rem; */
+  font-weight: 800;
   font-style: normal;
   text-transform: uppercase;
-  color: #ef2d56;
+  color: black;
   background-color: #ffffff;
   border-radius: 1.25rem;
   -webkit-border-radius: 1.25rem;
+  font-family: "Noto Sans", sans-serif;
   -moz-border-radius: 1.25rem;
   padding: 0.35rem 0.75rem;
   border-style: outset;
   border-width: 0.25rem;
-  border-color: #ef2d56;
+  border-color: #e172a2;
   -webkit-box-shadow: 7px 5px 3px 3px rgba(51, 51, 51, 0.32);
   -moz-box-shadow: 7px 5px 3px 3px rgba(51, 51, 51, 0.32);
   -box-shadow: 7px 5px 3px 3px rgba(51, 51, 51, 0.32);
+}
+
+.button-5 {
+  align-items: center;
+  background-clip: padding-box;
+  background-color: #202846;
+  border: 1px solid transparent;
+  border-radius: 0.25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 3rem;
+  padding: calc(0.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  font-family: "Noto Sans", sans-serif;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  width: auto;
+}
+
+.button-5:hover,
+.button-5:focus {
+  background-color: #3c476e;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.button-5:hover {
+  transform: translateY(-1px);
+}
+
+.button-5:active {
+  background-color: #202846;
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  transform: translateY(0);
 }

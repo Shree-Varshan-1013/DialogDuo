@@ -1,49 +1,29 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import headerpic from '/img/headerpic.png'
 import Typewriter from 'typewriter-effect';
 import axios from 'axios';
 import Footer from '../components/Footer';
 import '../styles/Home.css'
 const Home = () => {
-    const download = async () => {
-        try {
-            const response = await fetch('http://localhost:2018/api/resume/fetch-pdf');
-            const blob = await response.blob();
-
-            // Create a temporary URL to the blob
-            const url = window.URL.createObjectURL(new Blob([blob]));
-
-            // Create a link element
-            const link = document.createElement('a');
-            link.href = url;
-            link.setAttribute('download', 'Resume.pdf'); // Set the filename for download
-            document.body.appendChild(link);
-
-            // Trigger the download
-            link.click();
-
-            // Clean up
-            link.parentNode.removeChild(link);
-        } catch (error) {
-            console.error('Error downloading PDF:', error);
-        }
-    };
-
+    
     return (
         <div class='home'>
             <div className='header'>
                 <div className='header-text'>
-                    <Typewriter
-                        options={{
-                            strings: "DialogDuo",
-                            autoStart: true,
-                            loop: true,
-                        }}
-                    />
-                    <p>Your personalized career companion guiding high school students in choosing paths, exploring colleges, internships, and higher education, while offering resume building tools for a seamless transition to a successful future. SkillBot offers personalized guidance on diverse career paths, from skill development and industry insights to job opportunities and continuous professional growth, ensuring a confident and informed transition into the professional world.</p>
+                    <h1 id="special-header">
+                        <Typewriter
+                            options={{
+                                strings: ["DialogDuo", "Skill Bot"],
+                                autoStart: true,
+                                loop: true,
+                            }}
+                        />
+                    </h1>
+                    <p>Your personalized career companion guiding high school students in choosing paths, exploring colleges, internships, and higher education, while offering resume building tools for a seamless transition to a successful future.</p>
                 </div>
                 <div className='header-img'>
-                    <img src={headerpic} alt="" />
+                    <span style={{ marginLeft: "190px" }}></span>
+                    <img src={headerpic} alt="homepage logo" />
                 </div>
             </div>
             <Footer />

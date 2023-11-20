@@ -19,7 +19,7 @@ const Footer = () => {
                         </p>
                         <p className="small text-muted mb-0">
                             &copy; Copyrights. All rights reserved.{" "}
-                            <a style={{ color: "#EF233C" }} href="#">
+                            <a style={{ color: "#eeaeca" }} href="#">
                                 dialogduo.com
                             </a>
                         </p>

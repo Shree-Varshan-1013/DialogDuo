@@ -5,7 +5,7 @@ footer {
   flex-flow: row wrap;
   padding: 50px;
   color: #fff;
-  background-color: #ef233c;
+  background-color: #eeaeca;
   font-family: "Baskervville", serif;
   user-select: none;
 }
@@ -26,17 +26,12 @@ a:focus {
 }
 
 .form-control {
-  background: #212529;
   border-color: #545454;
 }
 
-.form-control:focus {
-  background: #212529;
-}
-
 #button-addon2 {
-  background-color: #ef233c;
-  border-color: #ef233c;
+  background-color: #eeaeca;
+  border-color: #eeaeca;
 }
 
 footer {
