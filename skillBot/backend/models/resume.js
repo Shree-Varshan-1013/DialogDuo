@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-import { college } from '/public/img/Frame2.png';
 
 const resumeSchema = new mongoose.Schema({
     name: {
