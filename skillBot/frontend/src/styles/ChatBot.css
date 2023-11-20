@@ -7,8 +7,7 @@
 }
 
 body{
-    background: rgb(238,174,202);
-background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  background-color: #495a6c;
 }
 
 .message{
@@ -19,14 +18,16 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
 }
 
 #userMessage{
-    outline: none;
+  outline: none;
 }
 
 .chat-box {
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
   width: 600px;
   height: 400px;
   overflow-y: auto;
-  border: 1px solid #eeaeca;
+  border: 1px solid #868585;
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 20px;
@@ -38,7 +39,10 @@ background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 
   color: white ;
   padding: 8px;
   border-radius: 5px;
-  max-width: 80%;
+  max-width: 70%;   
+}
+.chat-start {
+  max-width: max-content;   
 }
 
 .received {
@@ -81,4 +85,17 @@ button {
 
 .chat-message-bot{
     float: left;
+}
+
+.inner-boxes{
+  display: flex;
+  justify-content: center;
+}
+
+#avatar--user{
+  margin-left: 10px;
+}
+
+#avatar--bot{
+  margin-right: 10px;
 }

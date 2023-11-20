@@ -1,5 +1,5 @@
 import React from 'react'
-import headerpic from '../assets/headerpic.png'
+import headerpic from '/public/img/headerpic.png'
 import '../styles/Home.css'
 const Home = () => {
     return (

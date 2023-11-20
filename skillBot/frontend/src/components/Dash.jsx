@@ -1,8 +1,8 @@
 import React from 'react'
 import '../styles/Dash.css'
-import school from '../assets/Frame1.png'
-import college from '../assets/Frame2.png'
-import resume from '../assets/Frame3.png'
+import school from '/img/Frame1.png'
+import college from '/img/Frame2.png'
+import resume from '/img/Frame3.png'
 
 const Dash = () => {
     return (
@@ -35,7 +35,7 @@ const Dash = () => {
                         <p>EXPLORE RESUME BUILDER </p>
                     </div>
                 </div>
-            </div>
+            </div>  
         </div>
     )
 }
