@@ -8,10 +8,6 @@ import ChatBot from './components/ChatBot.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-<<<<<<< HEAD
     <ChatBot/>
-=======
-    <App/>
->>>>>>> ca6e2bb4934fa30ea66567af20d97486e7c3a557
   </React.StrictMode>,
 )

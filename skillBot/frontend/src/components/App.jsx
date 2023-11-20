@@ -4,8 +4,8 @@ import ResumeForm from "./ResumeForm"
 function App() {
   return (
     <>
-    <ResumeForm/>
-        </>
+      <ResumeForm />
+    </>
   )
 }
 
