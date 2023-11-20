@@ -1,10 +1,11 @@
 import Home from "./Home"
 import Dash from "./Dash"
+import ResumeForm from "./ResumeForm"
 function App() {
   return (
     <>
-      <Dash />
-    </>
+    <ResumeForm/>
+        </>
   )
 }
 
