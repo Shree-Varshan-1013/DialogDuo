@@ -7,10 +7,15 @@ function ChatBot() {
     const [botMessages, setBotMessages] = useState([]);
     const [userData, setUserData] = useState("");
     const [timer, setTimer] = useState(true);
+    const typewriterRef = useRef(null);
     const chatEndRef = useRef(null);
 
     const scrollToBottom = () => {
         chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    };
+
+    const handleTypewriterComplete = () => {
+        scrollToBottom();
     };
 
     const addBotResponseWithDelay = (botResponse) => {
@@ -50,65 +55,84 @@ function ChatBot() {
     }, [botMessages]);
 
     return (
-        <>
-            <div class="chat-container">
-                <div class="chat-box">
-                    <div class="chat-message received chat-start">
-                        <div style={{ display: 'flex' }}>
-                            <div><img src="/img/chatbot.png" width={25} id="avatar--bot" /></div>
-                            <Typewriter
-                                options={{
-                                    strings: "Hello my name is skillBot, How can I help you",
-                                    autoStart: true,
-                                    delay: 25,
-                                    loop: false,
-                                    cursor: '', // Set cursor to an empty string to hide it after typing
-                                }}
-                            />
-                        </div>
-                    </div>
-                    {userMessages.map((userMsg, index) => (
-                        <div key={index} className="message">
-                            <div className="chat-message chat-message-user sent">
-                                <div className='inner-boxes'>
-                                    {userMsg}
-                                    <div><img src="/img/user.png" width={25} id="avatar--user" /></div>
-                                </div>
-                            </div>
-                            {botMessages[index] && (
-                                <div className="chat-message chat-message-bot received">
-                                    <div className='inner-boxes'>
-                                        <div><img src="/img/chatbot.png" width={25} id="avatar--bot" /></div>
-                                        <Typewriter
-                                            options={{
-                                                strings: `${botMessages[index]}`,
-                                                autoStart: true,
-                                                delay: 25,
-                                                loop: false,
-                                                cursor: '', // Set cursor to an empty string to hide it after typing
-                                            }}
-                                        />
-                                    </div>
-                                </div>
-                            )}
-                        </div>
-                    ))}
-                    <div ref={chatEndRef}></div>
-                </div>
-                <div class="user-input">
-                    <form onSubmit={getResponse}>
-                        <input type="text" value={userData} id="userMessage" name="userData" placeholder="Feel free to ask...." onChange={(e) => setUserData(e.target.value)} />
-                        {
-                            timer ? (
-                                <button type="submit" style={{ backgroundColor: "#202846" }}>Send</button>
-                            ) : (
-                                <button type="submit" style={{ backgroundColor: "#202846", cursor: 'not-allowed' }} disabled>Send</button>
-                            )
-                        }
-                    </form>
+        <div className='box'>
+            <div className='box--left'>
+                <div className='box--left--inner'>
+                    <h1>Shape Your <span id="special-text">Destiny</span>
+                        <br />with
+                        Comprehensive <span id="special-header-text">Career Counseling</span></h1>
+                    <p>
+                        With comprehensive career counseling, individuals receive the knowledge and support necessary to make informed choices and shape a fulfilling and purpose-driven professional life.
+                        <br />   Feel free to ask about your doubts and queries regarding your career.
+                    </p>
                 </div>
             </div>
-        </>
+            <div className='box--right'>
+                <div class="chat-container">
+                    <div class="chat-box">
+                        <div class="chat-message received chat-start">
+                            <div style={{ display: 'flex' }}>
+                                <div><img src="/img/chatbot.png" width={30} id="avatar--bot" /></div>
+                                <Typewriter
+                                    options={{
+                                        strings: "Hello my name is skillBot, How can I help you",
+                                        autoStart: true,
+                                        delay: 25,
+                                        loop: false,
+                                        cursor: '', // Set cursor to an empty string to hide it after typing
+                                    }}
+                                />
+                            </div>
+                        </div>
+                        {userMessages.map((userMsg, index) => (
+                            <div key={index} className="message">
+                                <div className="chat-message chat-message-user sent">
+                                    <div className='inner-boxes'>
+                                        {userMsg}
+                                        <div><img src="/img/user.png" width={30} id="avatar--user" /></div>
+                                    </div>
+                                </div>
+                                {botMessages[index] && (
+                                    <div className="chat-message chat-message-bot received">
+                                        <div className='inner-boxes'>
+                                            <div><img src="/img/chatbot.png" width={25} id="avatar--bot" /></div>
+                                            <Typewriter
+                                                onInit={(typewriter) => {
+                                                    typewriterRef.current = typewriter;
+                                                    typewriter
+                                                        .typeString(botMessages[index])
+                                                        .callFunction(handleTypewriterComplete)
+                                                        .start();
+                                                }}
+                                                options={{
+                                                    autoStart: false,
+                                                    delay: 25,
+                                                    loop: false,
+                                                    cursor: '',
+                                                }}
+                                            />
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
+                        ))}
+                        <div ref={chatEndRef}></div>
+                    </div>
+                    <div class="user-input">
+                        <form onSubmit={getResponse}>
+                            <input type="text" value={userData} id="userMessage" name="userData" placeholder="😄..." onChange={(e) => setUserData(e.target.value)} />
+                            {
+                                timer ? (
+                                    <button type="submit" className='button-54'>Send</button>
+                                ) : (
+                                    <button type="submit" className='button-54' style={{ cursor: 'not-allowed' }} disabled>Send</button>
+                                )
+                            }
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     )
 }
 
