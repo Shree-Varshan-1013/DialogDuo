@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const mongoDBConfig = async () => {
     try {
-        await mongoose.connect("mongodb://127.0.0.1:27017/ChatBot");
+        await mongoose.connect(process.env.MONGO_DB_URL);
         console.log('MongoDB is connected');
     } catch (error) {
         console.log(error);

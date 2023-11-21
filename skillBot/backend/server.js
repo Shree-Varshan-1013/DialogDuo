@@ -16,7 +16,7 @@ app.use(cors());
 dbConnect();
 
 app.get('/', (req, res) => {
-    res.send('Hello World')
+    res.send("Welcome tp SkillBot");
 });
 
 app.post('/api', async (req, res) => {
