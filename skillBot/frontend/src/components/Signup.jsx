@@ -19,6 +19,9 @@ const Signup = () => {
                         <input type="password" id="password" name="password" placeholder="Password"  />
                         <br />
                         <br />
+                        <input type="password" id="password" name="confirmpassword" placeholder="Confirm Password"  />
+                        <br />
+                        <br />
                         <div className='signin-buttons'>
                         <button className='button-5' onClick={() => navigate('/chatbot')}>SIGN UP</button>
                         </div>

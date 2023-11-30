@@ -3,7 +3,9 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const replicate = require('./config/replicateConfig');
 const dbConnect = require('./config/mongoDBConfig');
+const { registerUser, loginUser, getUser, updateUser, deleteUser } = require('./controller/userController');
 const resumeController = require('./controller/resumeController');
+const validateToken = require('./middleware/validatetokenHandler');
 const PORT = process.env.PORT || 2018;
 
 const app = express();
@@ -45,6 +47,13 @@ app.post("/api/resume/create-pdf", resumeController.generatePDF);
 
 // GET route for send generated PDF to client...
 app.get("/api/resume/fetch-pdf", resumeController.getGeneratePDF);
+
+//Auth
+app.post('/auth/register', registerUser);
+
+app.post('/auth/login', loginUser);
+
+app.get('/auth/current', validateToken ,getUser);
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 
