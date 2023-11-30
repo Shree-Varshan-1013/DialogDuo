@@ -18,7 +18,7 @@ app.use(cors());
 dbConnect();
 
 app.get('/', (req, res) => {
-    res.send("Welcome tp SkillBot");
+    res.send("Welcome to SkillBot");
 });
 
 app.post('/api', async (req, res) => {
@@ -56,5 +56,3 @@ app.post('/auth/login', loginUser);
 app.get('/auth/current', validateToken ,getUser);
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
-
-

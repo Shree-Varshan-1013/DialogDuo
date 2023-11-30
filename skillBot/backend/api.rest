@@ -11,6 +11,15 @@
 #     "contact": 6369442790
 # }
 
-GET http://localhost:2018/api/resume/fetch-pdf
+# GET http://localhost:2018/api/resume/fetch-pdf
+POST http://localhost:2018/auth/register
+Content-Type: application/json
+
+{
+    "username":"shree1013",
+    "email":"21cse131@skcet.ac.in",
+    "password":"shree12345",
+    "confirmpassword":"shree12345"
+}
 
 # GET http://localhost:2018/api/resume/get/shree@gmail.com
