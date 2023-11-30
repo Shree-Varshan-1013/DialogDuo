@@ -5,6 +5,8 @@ import ResumeForm from "./ResumeForm"
 import Navbar from "./Navbar"
 import ChatBot from "./ChatBot"
 import Download from "./Download"
+import Signin from "./Signin"
+import Signup from "./Signup"
 function App() {
   return (
     <>
@@ -13,6 +15,8 @@ function App() {
         <Route path="/" exact element={<Home />} />
         <Route path="/features" element={<Dash />} />
         <Route path="/chatbot" element={<ChatBot />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/resume" element={<ResumeForm />} />
         <Route path="/resume/download" element={<Download />} />
       </Routes>
