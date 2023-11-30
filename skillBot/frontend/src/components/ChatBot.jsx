@@ -63,8 +63,8 @@ function ChatBot() {
             <div className='box--left'>
                 <div className='box--left--inner'>
                     <h1 style={{ marginBottom: "20px" }}>Shape Your <span id="special-text">Destiny</span>
-                        <br />with
-                        Comprehensive <span id="special-header-text">Career Counseling</span></h1>
+                        <br/>with
+                        Comprehensive <br/><span id="special-header-text">Career Counseling</span></h1>
                     <p>
                         With comprehensive career counseling, individuals receive the knowledge and support necessary to make informed choices and shape a fulfilling and purpose-driven professional life.
                         <br />   Feel free to ask about your doubts and queries regarding your career.

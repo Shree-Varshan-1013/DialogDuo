@@ -43,9 +43,9 @@ app.get('/api/resume/get/:email', resumeController.getResume);
 // POST route for PDF generation....
 app.post("/api/resume/create-pdf", resumeController.generatePDF);
 
-  // GET route for send generated PDF to client...
+// GET route for send generated PDF to client...
 app.get("/api/resume/fetch-pdf", resumeController.getGeneratePDF);
 
-app.listen(PORT, () => { `Server is running on port ${PORT}` })
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
 
 

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import Home from "./Home"
 import Dash from "./Dash"
 import { Routes, Route } from "react-router-dom"
@@ -5,7 +6,9 @@ import ResumeForm from "./ResumeForm"
 import Navbar from "./Navbar"
 import ChatBot from "./ChatBot"
 import Download from "./Download"
+  
 function App() {
+
   return (
     <>
       <Navbar />
