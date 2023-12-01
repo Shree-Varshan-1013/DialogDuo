@@ -21,7 +21,7 @@ const Dash = () => {
                             <label>College</label>
                         </div>
                         <p>SkillBot offers personalized guidance on diverse career paths, from skill development and industry insights to job opportunities and continuous professional growth, ensuring a confident and informed transition into the professional world.</p>
-                        <button className='button-5' onClick={() => navigate('/chatbot')}>EXPLORE CAREER GUIDANCE</button>
+                        <button className='button-5' onClick={() => navigate('/sign-in')}>EXPLORE CAREER GUIDANCE</button>
                     </div>
                 </div>
                 <div className="card">
@@ -29,7 +29,7 @@ const Dash = () => {
                     <div className="cardtext">
                         <h1>Resume Builder</h1>
                         <p>SkillBot's intuitive resume builder feature empowers users to effortlessly create professional resumes, offering customizable templates, expert tips, and a streamlined process for showcasing skills and experiences, ensuring a standout presentation to potential employers.</p>
-                        <button className='button-5' onClick={() => navigate('/resume')}>EXPLORE RESUME BUILDER </button>
+                        <button className='button-5' onClick={() => navigate('/sign-in')}>EXPLORE RESUME BUILDER </button>
                     </div>
                 </div>
             </div>

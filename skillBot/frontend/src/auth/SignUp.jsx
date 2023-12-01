@@ -4,7 +4,7 @@ import userService from '../services/userService';
 import { signUpSchema } from '../schemas/signUp';
 import Swal from 'sweetalert2';
 import "../styles/Signin.css"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 const SignUp = () => {
 
@@ -128,8 +128,11 @@ const SignUp = () => {
                   <p style={{ color: "red" }}>{errors.confirmpassword}</p>
                 ) : null}
               </div>
+              <div style={{ marginBottom: "20px" }}>
+                Already have an account ? <Link to='/sign-in'>Sign In</Link>
+              </div>
               <div className='signin-buttons'>
-                <button type="submit" className='button-5'>SIGN UP</button>
+                <button type="submit" className='button-5'>Sign Up</button>
               </div>
             </form>
           </div>

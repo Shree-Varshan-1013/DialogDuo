@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import userService from '../services/userService';
 import { signInSchema } from '../schemas/signIn';
@@ -105,8 +105,11 @@ const SignIn = () => {
                         {errors.password && touched.password ? (
                             <p style={{ color: "red" }}>{errors.password}</p>
                         ) : null}
+                        <div style={{marginBottom:"20px"}}>
+                            Don't have an account ? <Link to='/sign-up'>Sign Up</Link>
+                        </div>
                         <div className='signin-buttons'>
-                            <button type="submit" className='button-5'>SIGN IN</button>
+                            <button type="submit" className='button-5'>Sign In</button>
                         </div>
                     </form>
                 </div>
