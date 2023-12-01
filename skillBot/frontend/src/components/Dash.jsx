@@ -9,7 +9,7 @@ const Dash = () => {
     const navigate = useNavigate();
 
     return (
-        <div className='dash'>
+        <div className='dash' name="features">
             <div className="cards">
                 <div className="card">
                     <img src={college} alt="" />

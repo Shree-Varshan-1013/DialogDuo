@@ -25,7 +25,7 @@ function ChatBotMenu() {
     }, [botMessages]);
 
     return (
-        <div className='box'>
+        <div className='box' name="chatbot" style={{marginTop:"90px"}}>
             <div className='box--left'>
                 <div className='box--left--inner'>
                     <h1 style={{ marginBottom: "20px" }}>Shape Your <span id="special-text">Destiny</span>

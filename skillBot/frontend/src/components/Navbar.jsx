@@ -1,7 +1,7 @@
 import React from "react";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link } from 'react-scroll';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
@@ -18,10 +18,10 @@ const Navbar = () => {
                     <div style={{ display: "flex", alignSelf: "center" }}>
                         <ul className="navbar-links">
                             <li className="navbar-link">
-                                <Link to="/chatbot">ChatBot</Link>
+                                <Link to="chatbot" smooth duration={3000}>ChatBot</Link>
                             </li>
                             <li className="navbar-link">
-                                <Link to="/contact">Contact</Link>
+                                <Link to="features" smooth duration={3000}>Features</Link>
                             </li>
                         </ul>
                     </div>
