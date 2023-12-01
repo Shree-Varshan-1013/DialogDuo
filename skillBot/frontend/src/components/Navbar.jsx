@@ -18,10 +18,10 @@ const Navbar = () => {
                     <div style={{ display: "flex", alignSelf: "center" }}>
                         <ul className="navbar-links">
                             <li className="navbar-link">
-                                <Link to="chatbot" smooth duration={3000}>ChatBot</Link>
+                                <Link to="chatbot" smooth duration={1500}>ChatBot</Link>
                             </li>
                             <li className="navbar-link">
-                                <Link to="features" smooth duration={3000}>Features</Link>
+                                <Link to="features" smooth duration={1500}>Features</Link>
                             </li>
                         </ul>
                     </div>
