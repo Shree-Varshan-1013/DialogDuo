@@ -74,7 +74,7 @@ body {
     rgba(238, 174, 202, 1) 0%,
     #94bbe9 100%
   );
-  width: 600px;
+  width: 80%;
   height: 400px;
   overflow-y: auto;
   border: 1px solid #868585;
@@ -117,7 +117,7 @@ input[type="text"] {
   border: 1px solid #909090;
   border-radius: 3px;
   margin-right: 10px;
-  outline: none; /* Remove default outline */
+  outline: none;
 }
 
 .chat-message-user {

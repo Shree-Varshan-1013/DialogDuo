@@ -1,5 +1,6 @@
 import React from 'react';
-import '../styles/Dashboard.css'; // Import your custom CSS file for styling
+import '../styles/Dashboard.css';
+import { Link } from 'react-router-dom';
 import ChatBot from './ChatBot';
 
 const Dashboard = () => {
@@ -8,13 +9,11 @@ const Dashboard = () => {
             <div className="sidebar">
                 <img src="/img/logo.png" width={240} />
                 <ul>
-                    <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Analytics</a></li>
-                    <li><a href="#">Reports</a></li>
+                    <Link to="/resume"><li style={{marginTop:"20px", fontSize:"20px"}}>Resume Generator</li></Link>
                 </ul>
             </div>
             <div className="main-content">
-                <h1>Dashboard</h1>
+                <h1 style={{ margin: "5px" }}>Dashboard</h1>
                 <div className="dummy-content">
                     <ChatBot />
                 </div>

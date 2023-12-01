@@ -80,7 +80,7 @@ const ResumeForm = () => {
         <div className='resume'>
             <div className="details">
                 <div className="enterdetails">
-                    <h2>Enter Your Details</h2>
+                    <h2 style={{marginTop:"20px"}}>Enter Your Details</h2>
                 </div>
                 <div className="formdetails">
                     <form action="">
