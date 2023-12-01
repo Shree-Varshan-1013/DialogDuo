@@ -60,17 +60,6 @@ function ChatBot() {
 
     return (
         <div className='box'>
-            <div className='box--left'>
-                <div className='box--left--inner'>
-                    <h1 style={{ marginBottom: "20px" }}>Shape Your <span id="special-text">Destiny</span>
-                        <br/>with
-                        Comprehensive <br/><span id="special-header-text">Career Counseling</span></h1>
-                    <p>
-                        With comprehensive career counseling, individuals receive the knowledge and support necessary to make informed choices and shape a fulfilling and purpose-driven professional life.
-                        <br />   Feel free to ask about your doubts and queries regarding your career.
-                    </p>
-                </div>
-            </div>
             <div className='box--right'>
                 <div class="chat-container">
                     <div class="chat-box">
@@ -83,7 +72,7 @@ function ChatBot() {
                                         autoStart: true,
                                         delay: 25,
                                         loop: false,
-                                        cursor: '', // Set cursor to an empty string to hide it after typing
+                                        cursor: '',
                                     }}
                                 />
                             </div>

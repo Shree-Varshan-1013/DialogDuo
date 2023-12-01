@@ -37,7 +37,7 @@ function ChatBotMenu() {
                     </p>
                 </div>
             </div>
-            <div className='box--right'>
+            <div className='box--right--menu'>
                 <div class="chat-container">
                     <div class="chat-box">
                         <div class="chat-message received chat-start">

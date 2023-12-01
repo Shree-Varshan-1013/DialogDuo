@@ -12,7 +12,12 @@
 }
 
 .box--right {
+  width: 100%;
+}
+
+.box--right--menu {
   width: 50%;
+  overflow: hidden;
 }
 
 .chat-container {

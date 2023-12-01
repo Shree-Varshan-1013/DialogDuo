@@ -1,30 +1,30 @@
 module.exports = (values) => {
-  const {
-    name,
-    jobTitle,
-    email,
-    linkedIn,
-    description,
-    languages,
-    school,
-    schoolYear,
-    collegeYear,
-    college,
-    experience,
-    skills,
-    projects,
-    contact,
-    location,
-  } = values;
+	const {
+		name,
+		jobTitle,
+		email,
+		linkedIn,
+		description,
+		languages,
+		school,
+		schoolYear,
+		collegeYear,
+		college,
+		experience,
+		skills,
+		projects,
+		contact,
+		location,
+	} = values;
 
-  let htmlTemplate = `
-  <!DOCTYPE html>
+	let htmlTemplate = `
+	<!DOCTYPE html>
     <html>
     <head>
     <title>${name}'s Resume</title>
 	<meta charset="UTF-8"> 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,500,600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<style>
 	* {
 		box-sizing: border-box;
@@ -77,10 +77,9 @@ module.exports = (values) => {
 		font-style: normal;
 	  }
 	  body {
-		font-family: 'Roboto Slab';
+		font-family: 'Nunito';
 		font-size: 18px;
-		letter-spacing: 0px;
-		font-weight: 400;
+		font-weight: 700;
 		line-height: 28px;
 		background-size: cover;
 		font-style: normal;
@@ -98,19 +97,16 @@ module.exports = (values) => {
 		font-style: normal;
 	  }
 	  h2 {
-		font-family: 'Roboto Slab', serif;
+		font-family: 'Nunito', serif;
 		font-size: 30px;
-		letter-spacing: 5px;
-		font-weight: 600;
 		line-height: 40px;
 		color: #000;
 		font-style: normal;
 	  }
 	  h3 {
-		font-family: 'Roboto Slab', serif;
+		font-family: 'Nunito', serif;
 		font-size: 21px;
-		letter-spacing: 1px;
-		font-weight: 600;
+		font-weight: 700;
 		line-height: 28px;
 		color: #000;
 	  }
@@ -123,7 +119,7 @@ module.exports = (values) => {
 	  }
 	  .top-bar {
 		height: 220px;
-		background-color: #848484;
+		background-color: #202846;
 		color: #fff;
 	  }
 	  .name {
@@ -136,11 +132,10 @@ module.exports = (values) => {
 		bottom: 0;
 		height: 120px;
 		text-align: center;
-		font-family: 'Roboto Slab';
+		font-family: 'Nunito';
 		font-size: 58px;
-		letter-spacing: 8px;
-		font-weight: 100;
-		line-height: 60px;
+		font-weight: 700;
+		line-height: 40px;
 		font-style: normal;
 	  }
 	  .name div {
@@ -155,7 +150,8 @@ module.exports = (values) => {
 		right: false;
 		bottom: 0;
 		width: 380px;
-		background-color: #f7e0c1;
+		background-color: #eeaeca;
+		border-radius: 30px 30px 0px 0px;
 		padding: 320px 30px 50px;
 	  }
 	  .mugshot {
@@ -201,10 +197,9 @@ module.exports = (values) => {
 		right: 20%;
 		bottom: ;
 		cursor: pointer;
-		font-family: 'Roboto Slab', serif;
+		font-family: 'Nunito', serif;
 		font-size: 60px;
-		letter-spacing: 0px;
-		font-weight: 400;
+		font-weight: 700;
 		line-height: 58.333333333333336px;
 		font-style: normal;
 	  }
@@ -215,10 +210,9 @@ module.exports = (values) => {
 	  }
 	  
 	  .side-header {
-		font-family: 'Roboto Slab', serif;
+		font-family: 'Nunito', serif;
 		font-size: 18px;
-		letter-spacing: 4px;
-		font-weight: 600;
+		font-weight: 700;
 		line-height: 28px;
 		margin: 60px auto 10px;
 		padding-bottom: 5px;
@@ -252,94 +246,91 @@ module.exports = (values) => {
 		background-color: #999;
 	  }
 	  .greyed {
-		background-color: #ddd;
+		background-color: rgb(202, 205, 223);
 		width: 100%;
-		max-width: 580px;
 		text-align: center;
-		font-family: 'Roboto Slab';
+		font-family: 'Nunito';
 		font-size: 18px;
-		letter-spacing: 6px;
-		font-weight: 600;
+		font-weight: 700;
 		line-height: 28px;
 	  }
 	  @media screen and (max-width: 1150px) {
 		.name {
 		  color: #fff;
-		  font-family: 'Roboto Slab';
+		  font-family: 'Nunito';
 		  font-size: 38px;
-		  letter-spacing: 6px;
 		  font-weight: 100;
 		  line-height: 48px;
 		}
 	  }	  
 	</style>
-    </head>
-	<body>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <div class="rela-block page">
+	  </head>
+	  <body>
+	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	  <div class="rela-block page">
         <div class="rela-block top-bar">
-			<div class="caps name"><div class="abs-center">${name}</div></div>
+			<div class=" name"><div class="abs-center">${name}</div></div>
         </div>
-        <div class="side-bar">
-            <div class="mugshot">
-                <div class="logo">
-                    <svg viewbox="0 0 80 80" class="rela-block logo-svg">
-                        <path d="M 10 10 L 52 10 L 72 30 L 72 70 L 30 70 L 10 50 Z" stroke-width="2.5" fill="none"/>
-                    </svg>
-                    <p class="logo-text">${name[0]}</p>
-                </div>
+		<div class="side-bar">
+		<div class="mugshot">
+			<div class="logo">
+				<svg viewbox="0 0 80 80" class="rela-block logo-svg">
+					<path d="M 10 10 L 52 10 L 72 30 L 72 70 L 30 70 L 10 50 Z" stroke-width="2.5" fill="none"/>
+				</svg>
 			</div>
+		</div>
+  
+		<p class="mb-1">Job Title :  ${jobTitle}</p>
+		<p class="mb-1">Location :  ${location}, India</p>
+  
+		<p class="mb-1"><span style="padding-right:10px;"><i class="fas fa-envelope"></i></span>${email}</p>`;
+	if (contact != "" && contact != null)
+		htmlTemplate += `<p class="mb-1"><span style="padding-right:10px;"><i class="fas fa-phone-square-alt"></i></span>${contact}</p>`;
 
-			<p class="mb-1">Job Ttile : ${jobTitle}, India</p>
-			<p class="mb-1">${location}, India</p>
+	if (projects != "" && projects != null)
+		htmlTemplate += ` <p class="rela-block caps side-header">Projects</p>
+	  <p class="rela-block list-thing">${projects}</p>`;
 
-			<p class="mb-1"><span style="padding-right:10px;"><i class="fas fa-envelope"></i></span>${email}</p>`;
-  if (contact != "" && contact != null)
-    htmlTemplate += `<p class="mb-1"><span style="padding-right:10px;"><i class="fas fa-phone-square-alt"></i></span>${contact}</p>`;
+	htmlTemplate += `
+	</div>
+	<div class="rela-block content-container">			
+	<div class="rela-block caps greyed">Profile</div>`;
+	if (linkedIn != "" && linkedIn != null)
+		htmlTemplate += `<p class="rela-block social mb-4"><span style="padding-right: 15px; font-size="20px;"><i class="fab fa-linkedin"></i></span>${linkedIn}</p>`;
 
-  if (projects != "" && projects != null)
-    htmlTemplate += `<p class="rela-block caps side-header">Projects</p>
-				<p class="rela-block list-thing">${projects}</p>`;
+	htmlTemplate += `<div class="rela-block caps greyed">Education</div>`;
+	if (college != "" && college != null)
+		htmlTemplate += ` <h3 class="mb-0" style="padding-left: 10px;">${college}</h3>
+	  <p class="text-muted light mt-0 mb-1" style="padding-left: 10px;">${collegeYear}</p>
+		  <br/>`;
 
-  htmlTemplate += `
-  			</div>
-			<div class="rela-block content-container">			
-			<div class="rela-block caps greyed">Profile</div>`;
-  if (linkedIn != "" && linkedIn != null)
-    htmlTemplate += `<p class="rela-block social mb-4"><span style="padding-right: 15px; font-size="20px;"><i class="fab fa-linkedin"></i></span>${linkedIn}</p>`;
+	if (school != "" && school != null)
+		htmlTemplate += `  <h3 class="mb-0" style="padding-left: 10px;">${school}</h3>
+	  <p class="text-muted light mt-0 mb-1" style="padding-left: 10px;">${schoolYear}</p>
+		  <br/>`;
 
-  htmlTemplate += `<div class="rela-block caps greyed">Education</div>`;
-  if (college != "" && college != null)
-    htmlTemplate += `<h3 class="mb-0">${college}</h3>
-			<p class="text-muted light mt-0 mb-1">${collegeYear}</p>`;
+	htmlTemplate += `<div class="rela-block caps greyed">Experience</div>`;
 
-  if (school != "" && school != null)
-    htmlTemplate += `  <h3 class="mb-0">${school}</h3>
-			<p class="text-muted light mt-0 mb-1">${schoolYear}</p>`;
-
-  htmlTemplate += `<div class="rela-block caps greyed">Experience</div>`;
-
-  if (experience != "" && experience != null)
-    htmlTemplate += `<p class="text-muted light mt-1 mb-2" style="font-size:17px;">${experience}</p>`;
+	if (experience != "" && experience != null)
+		htmlTemplate += `<p class="justified" style="font-size:17px;">${experience}</p>`;
 
 
-  htmlTemplate += `<div class="rela-block caps greyed">About Me</div>`;
+	htmlTemplate += `<div class="rela-block caps greyed">About Me</div>`;
 
-  if (description != "" && description != null)
-    htmlTemplate += `<p class="justified" style="font-size:17px;">${description}</p>
-    <h2>Languages Known</h2>
+	if (description != "" && description != null)
+		htmlTemplate += `<p class="justified" style="font-size:17px;">${description}</p>
+	  <div class="rela-block caps greyed">Languages known</div>
     <p class="justified" style="font-size:17px;">${languages}</p>
-    <h2>Skills</h2>
-    <p class="justified" style="font-size:17px;">${skills}</p>
-    <p class="justified" style="font-size:17px;">${description}</p>`;
+    <div class="rela-block caps greyed">Skills</div>
+    <p class="justified" style="font-size:17px;">${skills}</p>`;
 
-  htmlTemplate += `</div>
-    </div>
-    </body>
-    </html>
-  `;
-  return htmlTemplate;
+	htmlTemplate += `</div>
+	  </div>
+	  </body>
+	  </html>
+	`;
+	return htmlTemplate;
 };
