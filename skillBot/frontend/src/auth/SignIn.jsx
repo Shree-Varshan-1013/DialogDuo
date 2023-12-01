@@ -70,13 +70,16 @@ const SignIn = () => {
                 text: "Bad Credentials !",
             });
         }
+    }
 
-        return (
-            <div className='signin'>
-                <div className="signin-card">
-                    <div className="signin-cardtext">
-                        <h1>Sign In</h1>
-                        <form onSubmit={handleSubmit}>
+
+    return (
+        <div className='signin'>
+            <div className="signin-card">
+                <div className="signin-cardtext">
+                    <h1 style={{marginBottom:"30px"}}>Sign In</h1>
+                    <form onSubmit={handleSubmit}>
+                        <div className="input-box">
                             <input
                                 value={values.email}
                                 onChange={handleChange}
@@ -85,11 +88,11 @@ const SignIn = () => {
                                 id="email"
                                 name="email"
                                 placeholder="Email" />
-                            {errors.email && touched.email ? (
-                                <p style={{ color: "red" }}>{errors.email}</p>
-                            ) : null}
-                            <br />
-                            <br />
+                        </div>
+                        {errors.email && touched.email ? (
+                            <p style={{ color: "red" }}>{errors.email}</p>
+                        ) : null}
+                        <div className="input-box">
                             <input
                                 value={values.password}
                                 onChange={handleChange}
@@ -98,20 +101,18 @@ const SignIn = () => {
                                 id="password"
                                 name="password"
                                 placeholder="Password" />
-                            {errors.password && touched.password ? (
-                                <p style={{ color: "red" }}>{errors.password}</p>
-                            ) : null}
-                            <br />
-                            <br />
-                            <div className='signin-buttons'>
-                                <button type="submit" className='button-5'>SIGN IN</button>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                        {errors.password && touched.password ? (
+                            <p style={{ color: "red" }}>{errors.password}</p>
+                        ) : null}
+                        <div className='signin-buttons'>
+                            <button type="submit" className='button-5'>SIGN IN</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default SignIn

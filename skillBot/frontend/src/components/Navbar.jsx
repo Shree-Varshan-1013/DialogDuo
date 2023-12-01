@@ -18,13 +18,10 @@ const Navbar = () => {
                     <div style={{ display: "flex", alignSelf: "center" }}>
                         <ul className="navbar-links">
                             <li className="navbar-link">
-                                <Link to="/">Home</Link>
-                            </li>
-                            <li className="navbar-link">
-                                <Link to="/features">Features</Link>
-                            </li>
-                            <li className="navbar-link">
                                 <Link to="/chatbot">ChatBot</Link>
+                            </li>
+                            <li className="navbar-link">
+                                <Link to="/contact">Contact</Link>
                             </li>
                         </ul>
                     </div>
