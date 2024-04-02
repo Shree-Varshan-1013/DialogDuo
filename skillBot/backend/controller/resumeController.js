@@ -2,6 +2,7 @@ const pdf = require('html-pdf');
 const Resume = require('../models/resume');
 const path = require('path');
 const pdfTemplate = require("../models/resumeTemplate/index");
+
 const resumeBuilder = async (req, res) => {
     try {
         const { name, jobTitle, email, linkedIn, description, languages, school, schoolYear, college, collegeYear, experience, skills, projects, contact, location } = req.body;
