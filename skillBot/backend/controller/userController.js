@@ -35,10 +35,10 @@ const registerUser = asyncHandler(async (req, res) => {
 const loginUser = asyncHandler(async (req, res) => {
     const { email, password } = req.body;
     if (!email) {
-        res.status(400).json({ message: 'Email is required' });
+        res.status(400).json({ message: 'Email is required !' });
     }
     if (!password) {
-        res.status(400).json({ message: 'Password is required' }); x
+        res.status(400).json({ message: 'Password is required' });
     }
 
     const user = await User.findOne({ email });

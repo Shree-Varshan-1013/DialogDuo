@@ -301,7 +301,7 @@ module.exports = (values) => {
 	if (linkedIn != "" && linkedIn != null)
 		htmlTemplate += `<p class="rela-block social mb-4"><span style="padding-right: 15px; font-size="20px;"><i class="fab fa-linkedin"></i></span>${linkedIn}</p>`;
 
-	htmlTemplate += `<div class="rela-block caps greyed">Education</div>`;
+	htmlTemplate += `<div class="rela-block caps greyed">Education </div>`;
 	if (college != "" && college != null)
 		htmlTemplate += ` <h3 class="mb-0" style="padding-left: 10px;">${college}</h3>
 	  <p class="text-muted light mt-0 mb-1" style="padding-left: 10px;">${collegeYear}</p>

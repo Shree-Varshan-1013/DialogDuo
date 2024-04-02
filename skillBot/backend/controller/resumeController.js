@@ -47,12 +47,11 @@ const generatePDF = async (req, res) => {
         const options = {
             format: 'Letter', // Paper format: 'A4', 'Letter', etc.
             border: {
-                top: '20mm', // Top margin
-                right: '20mm', // Right margin
-                bottom: '20mm', // Bottom margin
-                left: '20mm' // Left margin
+                top: '20mm',
+                right: '20mm',
+                bottom: '20mm',
+                left: '20mm' 
             },
-            // Other options you want to set
         };
 
         pdf.create(pdfTemplate(req.body), options).toFile("Resume.pdf", (err) => {
