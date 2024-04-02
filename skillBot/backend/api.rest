@@ -22,4 +22,3 @@ Content-Type: application/json
     "confirmpassword":"shree12345"
 }
 
-# GET http://localhost:2018/api/resume/get/shree@gmail.com
