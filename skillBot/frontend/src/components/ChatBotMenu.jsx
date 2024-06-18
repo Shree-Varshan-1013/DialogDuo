@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import axios from 'axios';
 import Swal from 'sweetalert2';
 import Typewriter from 'typewriter-effect';
-import '../styles/ChatBot.css';
+// import '../styles/ChatBot.css';
 
 function ChatBotMenu() {
     const [botMessages, setBotMessages] = useState([]);
@@ -22,7 +22,7 @@ function ChatBotMenu() {
     useEffect(() => {
         scrollToBottom();
         setBotMessages(fixedBotMessages);
-    }, [botMessages]);
+    }, []);
 
     return (
         <div className='box' name="chatbot" style={{marginTop:"90px"}}>
