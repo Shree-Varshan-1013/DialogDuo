@@ -1,13 +1,19 @@
-import { useState } from 'react'
+
+import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import userService from '../services/userService';
 import { signInSchema } from '../schemas/signIn';
 import Swal from 'sweetalert2';
+import { addToken, addUser, addUserDetails, toggleLogin } from '../redux/GlobalSlice';
+import { useDispatch } from 'react-redux';
+import ResetButton from '../redux/ResetButton';
 
 const SignIn = () => {
 
     const navigate = useNavigate();
+
+    const dispatch = useDispatch();
 
     const initialState = {
         email: "",
@@ -55,9 +61,10 @@ const SignIn = () => {
                 }
             });
             setTimeout(() => {
-                // dispatch(addUser(user_email));
-                // dispatch(addColor(color));
-                // dispatch(addToken(token));
+                dispatch(addUser(user_email));
+                dispatch(addUserDetails(response.data));
+                dispatch(addToken(token));
+                dispatch(toggleLogin(true));
                 navigate("/dashboard");
             }, 3000);
         } catch (error) {
@@ -73,11 +80,11 @@ const SignIn = () => {
 
     return (
         <>
-            <section class="overflow-hidden">  
+            <section class="overflow-hidden">
                 <div class="flex min-overflow-hidden">
                     <div class="relative flex-1 hidden w-0 overflow-hidden lg:block">
                         <img class="absolute inset-0 object-cover w-full h-full bg-black" src="/img/sign-in.jpg" alt="" />
-                    </div>  
+                    </div>
                     <div class="flex flex-col justify-center flex-1 px-4 py-12 overflow-hidden sm:px-6 lg:flex-none lg:px-20 xl:px-24">
                         <div class="w-full max-w-xl mx-auto lg:w-96">
                             <div>
